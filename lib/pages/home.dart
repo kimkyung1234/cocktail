@@ -10,9 +10,25 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Widget> _children = [
-    Center(
-      child: CocktailCardWidget(),
-    ),
+    Column(children: [
+      const SizedBox(height: 130),
+      const Padding(
+        padding: EdgeInsets.only(left: 15),
+        child: Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            'Recommended',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+      const SizedBox(height: 30),
+      CocktailCardWidget(),
+    ]),
     Center(
       child: Text('Search'),
     ),
