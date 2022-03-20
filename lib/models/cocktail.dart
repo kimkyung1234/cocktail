@@ -19,20 +19,22 @@ class Drink {
       this.strIBA,
       this.strGlass,
       this.strInstructions,
-      this.strDrinkThumb});
+      this.strDrinkThumb,
+      this.idDrink});
   String? strDrink;
   String? strIBA;
   String? strGlass;
   String? strInstructions;
   String? strDrinkThumb;
+  String? idDrink;
 
   factory Drink.fromJson(Map<String, dynamic> json) => Drink(
-        strDrink: json['strDrink'],
-        strIBA: json['strIBA'],
-        strGlass: json['strGlass'],
-        strInstructions: json['strInstructions'],
-        strDrinkThumb: json['strDrinkThumb'],
-      );
+      strDrink: json['strDrink'],
+      strIBA: json['strIBA'],
+      strGlass: json['strGlass'],
+      strInstructions: json['strInstructions'],
+      strDrinkThumb: json['strDrinkThumb'],
+      idDrink: json['idDrink']);
 
   Map<String, dynamic> toJson() => {
         'strDrink': strDrink ?? 'No data',
@@ -41,5 +43,6 @@ class Drink {
         'strInstructions': strInstructions ?? 'No data',
         'strDrinkThumb': strDrinkThumb ??
             'https://i.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs',
+        'idDrink': idDrink ?? 'No data'
       };
 }
