@@ -1,4 +1,5 @@
 import 'package:cocktail/providers/page.dart';
+import 'package:cocktail/widgets/cocktail_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,7 +11,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> _children = [
     Center(
-      child: Text('Home'),
+      child: CocktailCardWidget(),
     ),
     Center(
       child: Text('Search'),
