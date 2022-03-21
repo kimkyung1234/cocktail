@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
   final String id;
-  DetailPage({
+  const DetailPage({
     Key? key,
     required this.id,
   }) : super(key: key);
@@ -18,6 +18,10 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        title: const Text(
+          'Detail View',
+          style: TextStyle(color: Colors.white),
+        ),
         leading: const Padding(
           padding: EdgeInsets.only(left: 20),
           child: BackButton(),
@@ -37,7 +41,11 @@ class DetailPage extends StatelessWidget {
                 boxFit: BoxFit.fill,
                 radius: 0,
               ),
-              // Text(data?.strDrink ?? ''),
+              flexibleText(
+                text: data?.strInstructions ?? 'No data',
+                textColor: Colors.white,
+                padding: const EdgeInsets.all(10),
+              ),
             ],
           );
         },

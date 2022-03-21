@@ -1,6 +1,7 @@
 import 'package:cocktail/providers/page.dart';
 import 'package:cocktail/services/style.dart';
 import 'package:cocktail/widgets/cocktail_card.dart';
+import 'package:cocktail/widgets/common.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -11,27 +12,33 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Widget> _children = [
-    Column(children: [
-      const SizedBox(height: 130),
-      const Padding(
-        padding: EdgeInsets.only(left: 15),
-        child: Align(
+    Column(
+      children: [
+        const SizedBox(height: 120),
+        flexibleText(
+          text: 'Cocktails',
+          textColor: Colors.white,
+          padding: const EdgeInsets.only(left: 30),
           alignment: Alignment.topLeft,
-          child: Text(
-            'Recommended',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          fontWeight: FontWeight.bold,
+          fontSize: 40,
         ),
-      ),
-      const SizedBox(height: 30),
-      CocktailCardWidget(),
-    ]),
-    const Center(
-      child: Text('Search'),
+        const SizedBox(height: 30),
+        CocktailCardWidget(),
+      ],
+    ),
+    Column(
+      children: [
+        const SizedBox(height: 120),
+        flexibleText(
+          text: 'Search',
+          textColor: Colors.white,
+          padding: const EdgeInsets.only(left: 30),
+          alignment: Alignment.topLeft,
+          fontWeight: FontWeight.bold,
+          fontSize: 40,
+        ),
+      ],
     ),
   ];
 
