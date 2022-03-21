@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-Widget carryImageWidget({required String url}) {
+Widget carryImageWidget(
+    {required String url,
+    BoxFit boxFit = BoxFit.fitHeight,
+    double radius = 20}) {
   return Image.network(
     url,
-    fit: BoxFit.fitHeight,
+    fit: boxFit,
     loadingBuilder:
         (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
       if (loadingProgress == null) {
         return ClipRRect(
-          borderRadius: BorderRadius.circular(20), // Image border
+          borderRadius: BorderRadius.circular(radius), // Image border
           child: SizedBox.fromSize(
-            size: const Size.fromRadius(48), // Image radius
             child: child,
           ),
         );

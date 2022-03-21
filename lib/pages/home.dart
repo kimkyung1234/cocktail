@@ -1,4 +1,5 @@
 import 'package:cocktail/providers/page.dart';
+import 'package:cocktail/services/style.dart';
 import 'package:cocktail/widgets/cocktail_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       const SizedBox(height: 30),
       CocktailCardWidget(),
     ]),
-    Center(
+    const Center(
       child: Text('Search'),
     ),
   ];
@@ -39,14 +40,14 @@ class _HomePageState extends State<HomePage> {
     var provider = Provider.of<Pages>(context);
 
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(128, 0, 32, 1),
+      backgroundColor: Style.background,
       body: Center(
         child: _children[provider.getCurrentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
-        backgroundColor: const Color.fromRGBO(128, 0, 32, 1),
+        backgroundColor: Style.background,
         onTap: provider.onTabTapped,
         currentIndex: provider.getCurrentIndex,
         items: const [
