@@ -32,7 +32,14 @@ class ResultPage extends StatelessWidget {
         builder: (_, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.data?.drinks?.length == null) {
+            return Center(
+                child: flexibleText(
+              text: 'No data',
+              fontWeight: FontWeight.bold,
+            ));
           }
+          print('${snapshot.data?.drinks?.length}');
           return ListView.separated(
             separatorBuilder: (context, index) => const SizedBox(height: 14),
             padding: const EdgeInsets.all(18),
@@ -45,22 +52,27 @@ class ResultPage extends StatelessWidget {
                 ),
                 height: 130,
                 child: Row(
-                  children: [
+                  children: <Widget>[
                     carryImageWidget(
                       url: data?.strDrinkThumb ?? '',
-                      boxFit: BoxFit.fill,
+                      boxFit: BoxFit.scaleDown,
                     ),
                     const SizedBox(width: 10),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        flexibleText(text: data?.strDrink ?? ''),
-                        flexibleText(
-                          text: data?.strCategory ?? '',
-                          fontSize: 14,
-                        ),
-                      ],
+                    Flexible(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          flexibleText(
+                            text: data?.strDrink ?? '',
+                            alignment: Alignment.topLeft,
+                          ),
+                          flexibleText(
+                            text: data?.strCategory ?? '',
+                            fontSize: 14,
+                            alignment: Alignment.topLeft,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

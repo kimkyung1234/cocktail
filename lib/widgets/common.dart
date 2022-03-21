@@ -48,6 +48,8 @@ Widget flexibleText({
       alignment: alignment,
       child: Text(
         text,
+        overflow: TextOverflow.ellipsis,
+        softWrap: true,
         style: TextStyle(
           fontWeight: fontWeight,
           fontSize: fontSize,
