@@ -2,6 +2,7 @@ import 'package:cocktail/providers/page.dart';
 import 'package:cocktail/services/style.dart';
 import 'package:cocktail/widgets/cocktail_card.dart';
 import 'package:cocktail/widgets/common.dart';
+import 'package:cocktail/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -36,6 +37,8 @@ class _HomePageState extends State<HomePage> {
           fontWeight: FontWeight.bold,
           fontSize: 40,
         ),
+        const SizedBox(height: 30),
+        SearchWidget(),
       ],
     ),
   ];
