@@ -34,32 +34,6 @@ Widget carryImageWidget(
   );
 }
 
-Widget flexibleHeadText({
-  required String text,
-  Color textColor = Colors.white,
-  EdgeInsetsGeometry padding = const EdgeInsets.all(0),
-  double fontSize = 20,
-  FontWeight fontWeight = FontWeight.normal,
-  AlignmentGeometry alignment = Alignment.center,
-}) {
-  return Padding(
-    padding: padding,
-    child: Align(
-      alignment: alignment,
-      child: Text(
-        text,
-        overflow: TextOverflow.ellipsis,
-        softWrap: true,
-        style: TextStyle(
-          fontWeight: fontWeight,
-          fontSize: fontSize,
-          color: textColor,
-        ),
-      ),
-    ),
-  );
-}
-
 Widget flexibleText({
   required String text,
   Color textColor = Colors.white,
@@ -67,6 +41,7 @@ Widget flexibleText({
   double fontSize = 20,
   FontWeight fontWeight = FontWeight.normal,
   AlignmentGeometry alignment = Alignment.center,
+  TextOverflow? overflow,
 }) {
   return Padding(
     padding: padding,
@@ -74,6 +49,7 @@ Widget flexibleText({
       alignment: alignment,
       child: Text(
         text,
+        overflow: overflow,
         style: TextStyle(
           fontWeight: fontWeight,
           fontSize: fontSize,

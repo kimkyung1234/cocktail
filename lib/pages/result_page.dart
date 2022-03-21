@@ -74,9 +74,10 @@ class ResultPage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            flexibleHeadText(
+                            flexibleText(
                               text: data?.strDrink ?? '',
                               alignment: Alignment.topLeft,
+                              overflow: TextOverflow.ellipsis,
                             ),
                             flexibleText(
                               text: data?.strCategory ?? '',
