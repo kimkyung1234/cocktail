@@ -1,4 +1,5 @@
 import 'package:cocktail/pages/result_page.dart';
+import 'package:cocktail/services/style.dart';
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatelessWidget {
@@ -14,6 +15,7 @@ class SearchWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(5),
           child: TextField(
+            cursorColor: ColorStyle.background,
             textInputAction: TextInputAction.go,
             onSubmitted: (value) async {
               Navigator.push(
@@ -26,7 +28,10 @@ class SearchWidget extends StatelessWidget {
               );
             },
             decoration: const InputDecoration(
-              prefixIcon: Icon(Icons.search),
+              prefixIcon: Icon(
+                Icons.search,
+                color: Colors.grey,
+              ),
               border: InputBorder.none,
               hintText: 'Search',
             ),
