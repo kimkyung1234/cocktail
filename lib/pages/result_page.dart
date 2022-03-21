@@ -1,4 +1,5 @@
 import 'package:cocktail/models/cocktail.dart';
+import 'package:cocktail/pages/detail_page.dart';
 import 'package:cocktail/services/api.dart';
 import 'package:cocktail/services/style.dart';
 import 'package:cocktail/widgets/common.dart';
@@ -46,35 +47,47 @@ class ResultPage extends StatelessWidget {
             itemCount: snapshot.data?.drinks?.length ?? 0,
             itemBuilder: (_, index) {
               final data = snapshot.data?.drinks?[index];
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                height: 130,
-                child: Row(
-                  children: <Widget>[
-                    carryImageWidget(
-                      url: data?.strDrinkThumb ?? '',
-                      boxFit: BoxFit.scaleDown,
-                    ),
-                    const SizedBox(width: 10),
-                    Flexible(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          flexibleHeadText(
-                            text: data?.strDrink ?? '',
-                            alignment: Alignment.topLeft,
-                          ),
-                          flexibleText(
-                            text: data?.strCategory ?? '',
-                            fontSize: 14,
-                            alignment: Alignment.topLeft,
-                          ),
-                        ],
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailPage(
+                        id: data?.idDrink ?? '',
                       ),
                     ),
-                  ],
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  height: 130,
+                  child: Row(
+                    children: <Widget>[
+                      carryImageWidget(
+                        url: data?.strDrinkThumb ?? '',
+                        boxFit: BoxFit.scaleDown,
+                      ),
+                      const SizedBox(width: 10),
+                      Flexible(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            flexibleHeadText(
+                              text: data?.strDrink ?? '',
+                              alignment: Alignment.topLeft,
+                            ),
+                            flexibleText(
+                              text: data?.strCategory ?? '',
+                              fontSize: 14,
+                              alignment: Alignment.topLeft,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
