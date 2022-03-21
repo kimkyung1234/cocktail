@@ -62,7 +62,7 @@ class ResultPage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          flexibleText(
+                          flexibleHeadText(
                             text: data?.strDrink ?? '',
                             alignment: Alignment.topLeft,
                           ),
