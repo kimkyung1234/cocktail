@@ -53,7 +53,6 @@ class CocktailCardWidget extends StatelessWidget {
                                 children: [
                                   flexibleText(
                                     text: data?.strDrink ?? '',
-                                    textColor: Colors.white,
                                     fontSize: 25,
                                     fontWeight: FontWeight.bold,
                                     alignment: Alignment.topLeft,

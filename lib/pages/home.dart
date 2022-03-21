@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(height: 120),
         flexibleText(
           text: 'Cocktails',
-          textColor: Colors.white,
           padding: const EdgeInsets.only(left: 30),
           alignment: Alignment.topLeft,
           fontWeight: FontWeight.bold,
@@ -32,7 +31,6 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(height: 120),
         flexibleText(
           text: 'Search',
-          textColor: Colors.white,
           padding: const EdgeInsets.only(left: 30),
           alignment: Alignment.topLeft,
           fontWeight: FontWeight.bold,
@@ -47,14 +45,14 @@ class _HomePageState extends State<HomePage> {
     var provider = Provider.of<Pages>(context);
 
     return Scaffold(
-      backgroundColor: Style.background,
+      backgroundColor: ColorStyle.background,
       body: Center(
         child: _children[provider.getCurrentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
-        backgroundColor: Style.background,
+        backgroundColor: ColorStyle.background,
         onTap: provider.onTabTapped,
         currentIndex: provider.getCurrentIndex,
         items: const [

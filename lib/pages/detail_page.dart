@@ -14,7 +14,7 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Style.background,
+      backgroundColor: ColorStyle.background,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -41,9 +41,16 @@ class DetailPage extends StatelessWidget {
                 boxFit: BoxFit.fill,
                 radius: 0,
               ),
+              data?.strCategory != null
+                  ? flexibleText(
+                      text: 'Category : ${data?.strCategory}',
+                      fontSize: 13,
+                      padding: const EdgeInsets.only(left: 10, top: 20),
+                      alignment: Alignment.topLeft,
+                    )
+                  : const SizedBox(),
               flexibleText(
                 text: data?.strInstructions ?? 'No data',
-                textColor: Colors.white,
                 padding: const EdgeInsets.all(10),
               ),
             ],

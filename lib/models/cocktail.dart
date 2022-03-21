@@ -48,6 +48,6 @@ class Drink {
         'strDrinkThumb': strDrinkThumb ??
             'https://i.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs',
         'idDrink': idDrink ?? 'No data',
-        'strCategory': strCategory ?? 'No data'
+        'strCategory': strCategory ?? 'No data',
       };
 }

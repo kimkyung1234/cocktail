@@ -34,7 +34,7 @@ Widget carryImageWidget(
 
 Widget flexibleText({
   required String text,
-  Color textColor = Colors.black,
+  Color textColor = Colors.white,
   EdgeInsetsGeometry padding = const EdgeInsets.all(0),
   double fontSize = 20,
   FontWeight fontWeight = FontWeight.normal,

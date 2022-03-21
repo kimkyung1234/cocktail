@@ -6,6 +6,7 @@ void main() async {
   var idData = await getCocktailDataById(id: '11007');
   print(data.drinks?[0].strDrink);
   print(data.drinks?[0].idDrink);
+  print(idData.drinks?[0].strCategory);
 
   test('first', () {
     expect(data.drinks?[0].strDrink, '155 Belmont');
@@ -17,5 +18,9 @@ void main() async {
 
   test('get data by id', () {
     expect(idData.drinks?[0].strDrink, 'Margarita');
+  });
+
+  test('check category', () {
+    expect(idData.drinks?[0].strCategory, isNotNull);
   });
 }
