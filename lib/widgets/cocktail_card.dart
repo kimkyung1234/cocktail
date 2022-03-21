@@ -37,7 +37,33 @@ class CocktailCardWidget extends StatelessWidget {
                             ),
                           );
                         },
-                        child: carryImageWidget(url: data?.strDrinkThumb ?? ''),
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: [
+                            carryImageWidget(url: data?.strDrinkThumb ?? ''),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.5),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(20),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  flexibleText(
+                                    text: data?.strDrink ?? '',
+                                    textColor: Colors.white,
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    alignment: Alignment.topLeft,
+                                    padding: const EdgeInsets.all(20),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },
