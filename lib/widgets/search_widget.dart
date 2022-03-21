@@ -1,3 +1,4 @@
+import 'package:cocktail/pages/result_page.dart';
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatelessWidget {
