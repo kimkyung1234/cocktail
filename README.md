@@ -1,6 +1,6 @@
 # cocktail
 
-A new Flutter project.
+<img width="312" alt="스크린샷 2022-03-21 오후 10 06 49" src="https://user-images.githubusercontent.com/71820026/159267446-689978ae-b45a-45ca-b63a-167aadb23ad4.png">
 
 ## Getting Started
 
